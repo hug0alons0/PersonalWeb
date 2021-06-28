@@ -11,6 +11,7 @@ class Card extends Component {
     let {tarea} = this.props.data
     return (
       <div>
+        
         <p>{tarea}</p>
         <button onClick={this.props.remove}>Borrar tarea</button>
       </div>
