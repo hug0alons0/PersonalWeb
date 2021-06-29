@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './List.css';
+import './List.scss';
 import Card from '../Card/Card'
 import data from '../../data.json'
 import { v4 as uuidv4 } from 'uuid';
@@ -31,7 +31,6 @@ class List extends Component {
 
   renderCards = () => this.state.cards.map((card,i)=> <Card data={card} key={uuidv4()} remove={()=>this.removeCard(i)}/>)
 
-
   removeAllCards = () => this.setState({cards:[]})
 
   removeCard = (key) => {
@@ -45,18 +44,23 @@ class List extends Component {
 
   render() {
     return (
-      <div>
-          <form onSubmit={this.handleSubmit}>
+      <div className="List">
+        <div className="wrapper">
+          <form className="formulario" onSubmit={this.handleSubmit}>
           <label htmlFor="tarea">Tarea:</label><br/>
-          <input type="text" id="tarea" name="tarea" placeholder="tarea"/><br/><br/>
 
+          <input type="text" id="tarea" name="tarea" placeholder="tarea"/><br/>
           <input type="submit" value="ADD"/>
           </form>
-
+          
+        <div className="container">
         {this.renderCards()}
+        </div>
+        
 
         <button onClick={this.removeAllCards}>Borrar todas las tareas</button>
         <button onClick={this.resetCards}>Resetear las tareas</button>
+        </div>
       </div>
     );
   }
