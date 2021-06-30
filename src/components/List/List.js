@@ -55,7 +55,8 @@ class List extends Component {
 
   handleChange = (event) => {
     this.setState({ input: event.target.value });
-    setTimeout(() => {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
       this.setState({ input: "" });
       event.target.value = "";
     }, 20000);
