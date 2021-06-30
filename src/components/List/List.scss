@@ -2,18 +2,15 @@
 @import "../../Sass/colors";
 
 .List {
-    
     background-color: $color-primary;
     > * {
         @include flex-column-space-between();
         
     }
-
 label{
     font-size: 36px;
     font-family: sans-serif;
 }
-
     form{
         @include flex-column-space-between;
         margin-bottom: 12px;
@@ -30,30 +27,25 @@ label{
             box-shadow: inset 5px 5px 5px #3aade6,
             inset -5px -5px 5px #2b80aa;
             }
-
         input[type="submit"]{
             align-self: center;
-
-        
         }
     }
 
     .container{
         @include flex-row;
         width: 100%;
-        margin-bottom: 32px;
-        
+        margin-bottom: 32px;  
     }
 
     >.wrapper{
         >button{
-            padding: 18px;
-            
+            padding: 18px; 
         }
     }
 }
-@media screen and (min-width: 565px) and (max-width:959px) {
-        
+
+@media screen and (min-width: 565px) and (max-width:959px) {   
     .List{
         .container{
             @include flex-row-space-between;

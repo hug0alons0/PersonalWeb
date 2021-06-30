@@ -1,6 +1,5 @@
 @import "./Sass/colors";
 
-
 button, input[type="submit"]{
     justify-self: center;
     align-self: center;
@@ -15,22 +14,21 @@ button, input[type="submit"]{
     background: #3296C8;
     box-shadow:  5px 5px 10px #2b80aa,
                 -5px -5px 10px #3aade6;
-                animation-name: pulsar;
-                animation-duration: 0.2s;
 
-                @keyframes pulsar{
-                    from{
-                        box-shadow:  5px 5px 10px #2b80aa,
-                                -5px -5px 10px #3aade6;
-                    }
-                    to{
-                        box-shadow: inset 5px 5px 5px #2b80aa,
-                            inset -5px -5px 5px #3aade6;
+    //             @keyframes pulsar{
+    //                 from{
+    //                     box-shadow:  5px 5px 10px #2b80aa,
+    //                             -5px -5px 10px #3aade6;
+    //                 }
+    //                 to{
+    //                     box-shadow: inset 5px 5px 5px #2b80aa,
+    //                         inset -5px -5px 5px #3aade6;
                             
-                    }
-                }           
-    &:active{
-        
-    }
+    //                 }
+    //             }           
+    // &:active{
+    //     animation-name: pulsar;
+    //     animation-duration: 0.2s;
+    // }
     
 }
