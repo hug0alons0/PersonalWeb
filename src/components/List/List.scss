@@ -24,8 +24,11 @@
       // border: solid 2px black;
       border-radius: 6px;
       border: none;
-      background: #3aade6;
+      background: #3296c8;
       box-shadow: inset 5px 5px 5px #2b80aa, inset -5px -5px 5px #3aade6;
+      &::placeholder {
+        color: #fff;
+      }
     }
 
     input[type="submit"] {
