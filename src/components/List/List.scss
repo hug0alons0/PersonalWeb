@@ -2,66 +2,55 @@
 @import "../../Sass/colors";
 
 .List {
-    
-    background-color: $color-primary;
-    > * {
-        @include flex-column-space-between();
-        
-    }
+  background-color: $color-primary;
+  > * {
+    @include flex-column-space-between();
+  }
 
-label{
+  label {
     font-size: 36px;
     font-family: sans-serif;
+  }
+
+  form {
+    @include flex-column-space-between;
+    margin-bottom: 12px;
+    margin-top: 32px;
+
+    input[type="text"] {
+      color: white;
+      text-align: center;
+      padding: 4px;
+      // border: solid 2px black;
+      border-radius: 6px;
+      border: none;
+      background: #3aade6;
+      box-shadow: inset 5px 5px 5px #2b80aa, inset -5px -5px 5px #3aade6;
+    }
+
+    input[type="submit"] {
+      align-self: center;
+    }
+  }
+
+  .container {
+    @include flex-row;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  > .wrapper {
+    > button {
+      padding: 18px;
+    }
+  }
 }
-
-    form{
-        @include flex-column-space-between;
-        margin-bottom: 12px;
-        margin-top: 32px;
-
-        input[type="text"]{
-            color: white;
-            text-align: center;
-            padding: 4px;
-            // border: solid 2px black;
-            border-radius: 6px;
-            border: none;
-            background: #3aade6;
-            box-shadow: inset 5px 5px 5px #3aade6,
-            inset -5px -5px 5px #2b80aa;
-            }
-
-        input[type="submit"]{
-            align-self: center;
-
-        
-        }
+@media screen and (min-width: 565px) and (max-width: 959px) {
+  .List {
+    .container {
+      @include flex-row-space-between;
+      width: 100%;
+      margin-bottom: 32px;
     }
-
-    .container{
-        @include flex-row;
-        width: 100%;
-        margin-bottom: 32px;
-        
-    }
-
-    >.wrapper{
-        >button{
-            padding: 18px;
-            
-        }
-    }
+  }
 }
-@media screen and (min-width: 565px) and (max-width:959px) {
-        
-    .List{
-        .container{
-            @include flex-row-space-between;
-            width: 100%;
-            margin-bottom: 32px;
-                
-            }
-        }
-    }
-
-
