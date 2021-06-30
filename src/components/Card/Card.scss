@@ -2,67 +2,62 @@
 @import "../../Sass/colors";
 
 .Card {
-    @include flex-column();
-    margin: 0px;
-    background: $color-primary-dark;
-    border: black;
-    border-radius: 12px;
-    // border: 3px solid;
-    width: 100%;
-    padding: 12px;
+  @include flex-column();
+  margin: 0px;
+  background: $color-primary-dark;
+  border: black;
+  border-radius: 12px;
+  // border: 3px solid;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #29769d;
+  box-shadow: 5px 5px 10px #236485, -5px -5px 10px #2f88b5;
+
+  &:first-child {
+    margin-top: 12px;
+  }
+
+  p {
     margin-bottom: 12px;
-    background: #29769D;
-    box-shadow:  5px 5px 5px #236485,
-                -5px -5px 5px #2f88b5;  
+    text-align: center;
+  }
 
-    &:first-child{
-        margin-top: 12px;
-    }
+  > button {
+    margin-bottom: 5px;
+    background: #29769d;
+    box-shadow: 5px 5px 5px #236485, -5px -5px 5px #2f88b5;
+    &:active {
+      animation-name: pulsar;
+      animation-duration: 0.5s;
 
-    p{
-        margin-bottom: 12px;
-        text-align: center;
-    }
-
-    >button{
-        margin-bottom: 5px;
-        background: #29769D;
-        box-shadow:  5px 5px 5px #236485,
-                    -5px -5px 5px #2f88b5;
-                    @keyframes pulsar{
-                        from{
-                            box-shadow:  5px 5px 10px #2b80aa,
-                                    -5px -5px 10px #3aade6;
-                        }
-                        to{
-                            box-shadow: inset 5px 5px 5px #2b80aa,
-                                inset -5px -5px 5px #3aade6;    
-                        }
-                    }           
-        &:active{
-            animation-name: pulsar;
-            animation-duration: 0.2s;
+      @keyframes pulsar {
+        from {
+          box-shadow: 5px 5px 10px #236485, -5px -5px 10px #2f88b5;
         }
+        to {
+          box-shadow: inset 5px 5px 5px #236485, inset -5px -5px 5px #2f88b5;
+        }
+      }
     }
+  }
+}
+@media screen and (min-width: 565px) and (max-width: 959px) {
+  .Card {
+    width: 48%;
+    margin: 16px 5px 16px 5px;
+    &:first-child {
+      margin: 5px;
+    }
+  }
 }
 
-    @media screen and (min-width: 565px) and (max-width:959px) {
-        .Card{
-            width: 48%;
-            margin: 16px 5px 16px 5px;
-            &:first-child{
-                margin: 5px;
-                
-            }
-        }
+@media screen and (min-width: 961px) {
+  .Card {
+    width: 30%;
+    margin: 16px 0px 16px 24px;
+    &:first-child {
+      margin: 16px 0px 16px 24px;
     }
-      
-    @media screen and (min-width:961px){
-        .Card{
-            width: 30%;
-            margin: 16px 0px 16px 24px;
-            &:first-child{
-                margin: 16px 0px 16px 24px;
-            }
-        }
-    }
+  }
+}
