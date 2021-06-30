@@ -1,0 +1,6 @@
+@import "../../Sass/mixins";
+@import "../../Sass/colors";
+
+.Header {
+  @include flex-row-space-between();
+}
