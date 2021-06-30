@@ -1,7 +1,7 @@
 @import "./Sass/colors";
 
-*{
-  color: white;
+* {
+  // color: white;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,20 +10,20 @@ $viewport-phone: 300px;
 $viewport-tablet: 564px;
 $viewport-desktop: 960px;
 
-.wrapper{
+.wrapper {
   margin: 0 auto;
   width: $viewport-phone;
   background: $color-primary;
 }
 
-@media screen and (min-width: $viewport-tablet + 1px) and (max-width:$viewport-desktop - 1px) {
-  .wrapper{
+@media screen and (min-width: $viewport-tablet + 1px) and (max-width: $viewport-desktop - 1px) {
+  .wrapper {
     width: $viewport-tablet;
   }
 }
 
-@media screen and (min-width: $viewport-desktop + 1){
-  .wrapper{
+@media screen and (min-width: $viewport-desktop + 1) {
+  .wrapper {
     width: $viewport-desktop;
   }
 }
