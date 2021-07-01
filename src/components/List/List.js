@@ -126,3 +126,8 @@ class List extends Component {
 }
 
 export default List;
+
+// let apiKey = "d29114ce0d3d754700c440e4af5cd481";
+
+// aemet
+// eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFubWFudWVsYmFyY2lhZ2FyY2lhQGdtYWlsLmNvbSIsImp0aSI6IjY1ZGRkMWY2LTM4ZTAtNGQ5Mi04YWQ0LTZmZDIxOTRhOGY2NSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNjI1MDY5MjE3LCJ1c2VySWQiOiI2NWRkZDFmNi0zOGUwLTRkOTItOGFkNC02ZmQyMTk0YThmNjUiLCJyb2xlIjoiIn0.9gbFJvnmcNVGtl0Q_Avg9LnkSaYggTNqDpv1eX5aMGA
