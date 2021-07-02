@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import "./Weather.css";
 import WeatherCard from "../WeatherCard";
 import { v4 as uuidv4 } from "uuid";
+import { userContext } from "../../context/userContext";
 import axios from "axios";
 
 class Weather extends Component {
+  static contextType = userContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -28,19 +30,21 @@ class Weather extends Component {
     e.preventDefault();
     await this.setState({ ciudad: e.target.ciudad.value });
     this.cargarDatosTiempo(this.state.ciudad);
+    const userCont = this.context;
+    userCont.setCity(this.state.ciudad);
     e.target.reset();
   };
 
   cargarDatosTiempo = async (ciudad) => {
     const res = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=d29114ce0d3d754700c440e4af5cd481`
+      `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${process.env.REACT_APP_API_KEY}`
     );
     const data = res.data;
 
     this.setState({ lat: data.coord.lat });
     this.setState({ lon: data.coord.lon });
     const res2 = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.lat}&lon=${this.state.lon}&exclude=minutely,alerts&units=metric&appid=d29114ce0d3d754700c440e4af5cd481`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.lat}&lon=${this.state.lon}&exclude=minutely,alerts&units=metric&appid=${process.env.REACT_APP_API_KEY}`
     );
 
     const data2 = res2.data;
@@ -48,7 +52,7 @@ class Weather extends Component {
     const hourly = data2.hourly.slice(0, 5);
     const dataWeather = hourly.map((hour) => {
       return {
-        hour: new Date(hour.dt * 1000 + timezone * 1000).getHours(),
+        hour: new Date(hour.dt * 1000 + timezone * 1000).getHours() - 1,
         temp: hour.temp,
         weather: hour.weather[0].description,
       };
